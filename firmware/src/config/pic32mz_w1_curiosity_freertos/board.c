@@ -26,6 +26,7 @@
 
 ///#include <p33Fxxxx.h>
 #include "board.h"
+#include "definitions.h"
 
 /********************************************************************/
 // CPU
@@ -70,51 +71,39 @@ void cpu_init(void) {
 #define LED_ON (0)
 #define LED_OFF (1)
 
-void led_init(void) {
-#if 0
-    // set led GPIO as outputs
-    RED_LED_TRIS = 0;
-    YELLOW_LED_TRIS = 0;
-    GREEN_LED_TRIS = 0;
-
-    // turn off the LEDs
-    RED_LED = LED_OFF;
-    YELLOW_LED = LED_OFF;
-    GREEN_LED = LED_OFF;
-#endif
+void led_init(void) {    
+    TRISKCLR = (1U<<1);
+    TRISKCLR = (1U<<3);    
 }
 
 void led_state(int led, int state) {
-#if 0
-    int val = state ? LED_ON : LED_OFF;
+    int val = state ? LED_OFF : LED_ON;
     switch (led) {
         case 1:
-            RED_LED = val;
+            TRISKCLR = (1U<<1);
+            GPIO_PinWrite(GPIO_PIN_RK1, (bool)val);
             break;
         case 2:
-            YELLOW_LED = val;
+            TRISKCLR = (1U<<3);  
+            GPIO_PinWrite(GPIO_PIN_RK3, (bool)val);;
             break;
-        case 3:
-            GREEN_LED = val;
+        default:
             break;
-#endif
     }
+}
 
 
 void led_toggle(int led) {
-#if 0
     switch (led) {
         case 1:
-            RED_LED ^= 1;
+            GPIO_PinToggle(GPIO_PIN_RK1);
             break;
         case 2:
-            YELLOW_LED ^= 1;
+            GPIO_PinToggle(GPIO_PIN_RK3);
             break;
-        case 3:
-            GREEN_LED ^= 1;
+        default:
             break;
     }
-#endif
 }
 
 /********************************************************************/
@@ -127,28 +116,20 @@ void led_toggle(int led) {
 #define SWITCH_S2 _RD9
 #endif
 void switch_init(void) {
-    
-#if 0
-    // set switch GPIO as inputs
-    SWITCH_S1_TRIS = 1;
-    SWITCH_S2_TRIS = 1;
-#endif
+    TRISASET = (1U<<10);
 }
 
 int switch_get(int sw) {   
-#if 0
     int val = 1;
     switch (sw) {
         case 1:
-            val = SWITCH_S1;
+            TRISASET = (1U<<10);
+            val = GPIO_PinRead(GPIO_PIN_RA10);
             break;
-        case 2:
-            val = SWITCH_S2;
+        default:
             break;
     }
     return val == 0;
-#endif
-    return 0;
          
 }
 

@@ -1,0 +1,12 @@
+.vscode
+.generated_files
+dist/
+debug/
+build/
+private/
+node_modules/
+**/nbproject/Makefile-*
+**/nbproject/Package-*
+defmplabxtrace*
+firmware/pic32mz_w1_curiosity_freertos.X/nbproject/pic32mz_w1_curiosity_freertos.debug
+firmware/pic32mz_w1_curiosity_freertos.X/nbproject/pic32mz_w1_curiosity_freertos.production

@@ -7,10 +7,10 @@ import utime
 def callback_test(p):
     print("IRQ event is triggered ..")
 
-p14 = Pin(14, mode=Pin.IN)
+p14 = Pin(41, mode=Pin.IN)
 p14.irq(handler=callback_test, trigger=Pin.IRQ_RISING)
 
-p44 = Pin(44, Pin.OUT)
+p44 = Pin(34, Pin.OUT)
 
 i = 0
 j = 0
