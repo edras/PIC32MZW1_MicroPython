@@ -56,15 +56,17 @@ void cpu_init(void) {
 
 /********************************************************************/
 // LEDs
-#if 0
+#if 1
 
-#define RED_LED_TRIS _TRISC15
-#define YELLOW_LED_TRIS _TRISC13
-#define GREEN_LED_TRIS _TRISC14
+#define RED_LED_TRIS _TRISK_TRISK12_MASK
+#define YELLOW_LED_TRIS _TRISK_TRISK13_MASK
+#define GREEN_LED_TRIS _TRISK_TRISK14_MASK
+#define BLUE_LED_TRIS _TRISC_TRISC9_MASK
 
-#define RED_LED _LATC15
-#define YELLOW_LED _LATC13
-#define GREEN_LED _LATC14
+#define RED_LED     GPIO_PIN_RK12
+#define YELLOW_LED  GPIO_PIN_RK13
+#define GREEN_LED   GPIO_PIN_RK14
+#define BLUE_LED    GPIO_PIN_RC9
 
 #endif
 
@@ -72,59 +74,67 @@ void cpu_init(void) {
 #define LED_OFF (1)
 
 void led_init(void) {    
-    TRISKCLR = (1U<<1);
-    TRISKCLR = (1U<<3);    
+    TRISKCLR = RED_LED_TRIS | YELLOW_LED_TRIS | GREEN_LED_TRIS;
+    TRISCCLR = BLUE_LED_TRIS;    
+}
+
+uint8_t _get_led_pin(int led)
+{
+    uint8_t led_pin;
+    switch (led) {
+        case 1: 
+            led_pin = RED_LED;
+            break;
+        case 2:
+            led_pin = YELLOW_LED;
+            break;
+        case 3: 
+            led_pin = GREEN_LED;
+            break;
+        case 4: 
+            led_pin = BLUE_LED;
+            break;
+        default:
+            led_pin = RED_LED;
+            break;
+    }
+    return led_pin;
 }
 
 void led_state(int led, int state) {
-    int val = state ? LED_OFF : LED_ON;
-    switch (led) {
-        case 1:
-            TRISKCLR = (1U<<1);
-            GPIO_PinWrite(GPIO_PIN_RK1, (bool)val);
-            break;
-        case 2:
-            TRISKCLR = (1U<<3);  
-            GPIO_PinWrite(GPIO_PIN_RK3, (bool)val);;
-            break;
-        default:
-            break;
-    }
+    uint8_t val = state ? LED_ON : LED_OFF;
+    uint8_t led_pin = _get_led_pin(led);
+    GPIO_PinWrite(led_pin, (bool)val);
 }
 
 
 void led_toggle(int led) {
-    switch (led) {
-        case 1:
-            GPIO_PinToggle(GPIO_PIN_RK1);
-            break;
-        case 2:
-            GPIO_PinToggle(GPIO_PIN_RK3);
-            break;
-        default:
-            break;
-    }
+    uint8_t led_pin = _get_led_pin(led);
+    GPIO_PinToggle(led_pin);
 }
 
 /********************************************************************/
 // switches
-#if 0
-#define SWITCH_S1_TRIS _TRISD8
-#define SWITCH_S2_TRIS _TRISD9
+#if 1
+#define SWITCH_S1_TRIS _TRISB_TRISB8_MASK
+#define SWITCH_S2_TRIS _TRISA_TRISA10_MASK
 
-#define SWITCH_S1 _RD8
-#define SWITCH_S2 _RD9
+#define SWITCH_S1 GPIO_PIN_RB8
+#define SWITCH_S2 GPIO_PIN_RA10
 #endif
 void switch_init(void) {
-    TRISASET = (1U<<10);
+    TRISBSET = _TRISB_TRISB8_MASK;
+    TRISASET = _TRISA_TRISA10_MASK;
 }
 
 int switch_get(int sw) {   
     int val = 1;
     switch (sw) {
         case 1:
-            TRISASET = (1U<<10);
-            val = GPIO_PinRead(GPIO_PIN_RA10);
+            val = GPIO_PinRead(SWITCH_S1);
+            break;
+        case 2:
+            val = GPIO_PinRead(SWITCH_S2);
             break;
         default:
             break;
