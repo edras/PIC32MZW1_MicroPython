@@ -2,7 +2,7 @@ import network
 import socket
 
 ssid = 'demo_ap'
-password = 'password'
+password = '12345678'
 nic=network.WLAN(network.STA_IF)
 nic.active(True)
 nic.connect(ssid, password)

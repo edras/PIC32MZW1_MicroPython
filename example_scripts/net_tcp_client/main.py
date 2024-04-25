@@ -20,7 +20,7 @@ s = socket.socket()
 s.connect(addr)		# or s.connect(ip, port)
 
 s.send("hello world")
-print("data is send")
+print("data is sent")
 while True:
     data = s.recv(500)
     if len(data) > 0:
