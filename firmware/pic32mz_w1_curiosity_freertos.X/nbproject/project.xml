@@ -14,6 +14,8 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
+                <sourceRootElem>../../../SAMD21_MicroPython/src/mp/py</sourceRootElem>
+                <sourceRootElem>../../../SAMD21_MicroPython/src/mp/ports/samd</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

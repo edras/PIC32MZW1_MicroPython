@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="48aaac33-a7a1-47b2-bc4a-3f0845fb4bee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/example_scripts/gpio_on_off_led/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_scripts/gpio_on_off_led/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_scripts/class_example/led/led_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_scripts/class_example/led/led_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_scripts/net_http_get/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_scripts/net_http_get/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_scripts/spi_read_sst26_id/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_scripts/spi_read_sst26_id/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/mcc-manifest-autosave.yml" beforeDir="false" afterPath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/mcc-manifest-autosave.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/micropython_pic32mz_w1.mc3" beforeDir="false" afterPath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/micropython_pic32mz_w1.mc3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/nbproject/configurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/nbproject/configurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firmware/src/config/pic32mz_w1_curiosity_freertos/board.c" beforeDir="false" afterPath="$PROJECT_DIR$/firmware/src/config/pic32mz_w1_curiosity_freertos/board.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firmware/src/config/pic32mz_w1_curiosity_freertos/modpybled.c" beforeDir="false" afterPath="$PROJECT_DIR$/firmware/src/config/pic32mz_w1_curiosity_freertos/modpybled.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firmware/src/config/pic32mz_w1_curiosity_freertos/pic32mz_w1_curiosity_freertos.mhc/settings.yml" beforeDir="false" afterPath="$PROJECT_DIR$/firmware/src/config/pic32mz_w1_curiosity_freertos/pic32mz_w1_curiosity_freertos.mhc/settings.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/nbproject/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/firmware/pic32mz_w1_curiosity_freertos.X/nbproject/project.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,17 +34,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "trial__wfi32-iot"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;trial__wfi32-iot&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/M71906/HarmonyProjects/PIC32MZW1_MicroPython&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>

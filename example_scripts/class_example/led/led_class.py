@@ -12,10 +12,10 @@ class LED:
     def update(self):
         self.current_time += 1
         if self.state and self.current_time - self.last_toggle >= self.on_time:
-            self.led.off()
+            self.led.on()
             self.state = False
             self.last_toggle = self.current_time
         elif not self.state and self.current_time - self.last_toggle >= self.off_time:
-            self.led.on()
+            self.led.off()
             self.state = True
             self.last_toggle = self.current_time
