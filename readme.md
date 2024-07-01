@@ -12,7 +12,8 @@ This is good for rapid prototyping , quick evaluation and automated tests.
 The MicroPython project can run on two PIC32MZW1 Evluation boards. They are the WFI32-IoT Development Board and the WFI32E Curiosity Board
 
 ## 1. WFI32-IoT Development Board
-Click [here](https://www.microchip.com/en-us/development-tool/EV36W50A) for the details of the board
+Click [here](https://www.microchip.com/en-us/development-tool/EV36W50A) for the details of the board. An already compiled hex file is available under /firmware folder. Flash this board with that file for a rapid plug-and-play experience. 
+Open a Terminal, connect to the serial port and start typing your first micropython program.
 
 </p>
   <p align="center"><img width="200" src="images/wfi32-iot_board.jpg">
