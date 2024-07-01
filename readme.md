@@ -26,7 +26,7 @@ Click [here](https://www.microchip.com/en-us/development-tool/EV12F11A) for the 
   </p>
 
 # Software Requirements
-- [MPLAB X IDE](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide) (v6.00 or later)
+- [MPLAB X IDE](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide) (v6.20 or later)
 - [MPLAB XC32](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers) (v4.30 or later)
 - [MPLAB Harmony 3](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-harmony-v3)
 
@@ -96,16 +96,21 @@ Below list introduce the use of each demo scrtips.
 Directory | Usage | Modules
 --- | --- | ---
 general_test | demonstrate the use of python packages, extract the email and author name | -
-gpio_on_off_led | turn on/ off Yellow LED on WFI32-IoT board with timer interrupt | umachine
-gpio_interrupt | demonostrate the use of gpio interrupt | umachine, utime
-tcp_client | act as TCP client, create socket to conect to the TCP server and exchange data | network, socket
-tcp_server_with_multiple_socket | create TCP server to handle multiple client socket simultaneously | network, socket, utime, gc, uselect
-http_get | TCP client send HTTP Get command to get the webpage contents of a website | network, socket
-http_server | set as softAP mode and run like a HTTP server. Remote device can connect to the softAP and browser the HTTP website | umachine, network, socket
+gpio_on_off_led | rainbow efect on WFI32-IoT board LEDs | pyb
+class_example | LED class example of Object Oriented Programming in python | umachine
+gpio_timer_callback | LED blinky on WFI32-IoT with timer interrupt callback | umachine
+gpio_interrupt | Switch interrupt on press with callback on WFI32-IoT | umachine
+net_tcp_client | act as TCP client, create socket to conect to the TCP server and exchange data | network, socket
+net_tcp_server_with_multiple_socket | create TCP server to handle multiple client socket simultaneously | network, socket, utime, gc, uselect
+net_http_get | TCP client send HTTP Get command to get the webpage contents of a website | network, socket
+net_http_server | set as softAP mode and run like a HTTP server. Remote device can connect to the softAP and browser the HTTP website | umachine, network, socket
 spi_read_sst26_flash | read SST26 SPI flash's manufacturer id and device id by using SPI bus | umachine, utime
+i2c_light_temp_read | read sensors on WFI32-IoT manufacturer id using I2C bus | umachine
 
 # Limitation
 1. umachine module support Class Pin, ADC, UART, SPI, I2C and Timer, and do not support class PWM, I2S, RTC, WDT, SD, SDCard and Signal
 2. Do not support the control of CAN bus, Ethernet and USB interface.
 3. Do not support Virtual File System (VFS) feature
-3. Do not support TLS secure connection
+4. Do not support TLS secure connection
+5. Do not support float operation
+
