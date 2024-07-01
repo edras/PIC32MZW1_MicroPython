@@ -36,6 +36,7 @@ STATIC const pyb_led_obj_t pyb_led_obj[] = {
     {{&pyb_led_type}},
     {{&pyb_led_type}},
     {{&pyb_led_type}},
+    {{&pyb_led_type}},
 };
 
 #define NUM_LED MP_ARRAY_SIZE(pyb_led_obj)

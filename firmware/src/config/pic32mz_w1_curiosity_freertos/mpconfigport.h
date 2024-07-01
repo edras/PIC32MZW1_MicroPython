@@ -82,7 +82,7 @@
 #define UINT_FMT "%u"
 #define INT_FMT "%d"
 typedef int mp_int_t; // must be pointer size
- typedef unsigned int mp_uint_t; // must be pointer size
+typedef unsigned int mp_uint_t; // must be pointer size
 
 typedef int mp_off_t;
 
@@ -118,8 +118,8 @@ extern const struct _mp_obj_module_t utime_module;
     struct _machine_timer_obj_t *machine_timer_obj_head; \
 
 #define MICROPY_MPHALPORT_H "pic32bit_mphal.h"
-#define MICROPY_HW_BOARD_NAME "dsPICSK"
-#define MICROPY_HW_MCU_NAME "dsPIC33"
+#define MICROPY_HW_BOARD_NAME "WFI32-IoT"
+#define MICROPY_HW_MCU_NAME "PIC32MZ"
 
 #define MICROPY_USE_INTERNAL_ERRNO  1
 // XC16 toolchain doesn't seem to define these

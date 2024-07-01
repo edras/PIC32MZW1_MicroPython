@@ -14,7 +14,7 @@ cs_pin.on()
 
 utime.sleep(1)
 
-print("Test is start..")
+print("Test start...")
 cs_pin.off()
 spi.write(b'\x66')	# sst26 enable reset command
 cs_pin.on()
@@ -38,7 +38,7 @@ rxdata = bytearray(4)
 cs_pin.off()
 spi.write_readinto(txdata, rxdata)
 cs_pin.on()
-print("Test is finish..")
+print("Test finish...")
 
 print("manufactureID = " + hex(rxdata[1]))
 print("deviceID = " + hex(rxdata[2] <<8 | rxdata[3]))

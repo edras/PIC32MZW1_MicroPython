@@ -2,7 +2,7 @@ import network
 import socket
 
 ssid = 'demo_ap'
-password = 'password'
+password = '12345678'
 nic=network.WLAN(network.STA_IF)
 nic.active(True)
 nic.connect(ssid, password)
@@ -24,7 +24,7 @@ def http_get(url):
         if data:
             print(str(data, 'utf8'), end='')
         else:
-            print("conn is close");
+            print("conn is close")
             break
     s.close()
 
